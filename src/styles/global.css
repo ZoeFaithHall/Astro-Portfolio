@@ -56,3 +56,7 @@ background-image: radial-gradient(circle at center center, transparent 0%,rgba(2
 .bg-black {
   background: CB997E!important;
 }
+
+.animate-marquee {
+  animation: marquee 100s linear infinite;
+}

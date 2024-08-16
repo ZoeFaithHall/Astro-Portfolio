@@ -56,10 +56,10 @@ animation: {
     extend: {
       colors: {
         black:"#191919",
-        white:"#fff",
-        eagle:"#dbd5c9",
-        carrot:"#f93700",
-        tan:"#d1c0a5",
+        white:"#F5F5F5",
+        eagle:"#E7E2DA",
+        lime:"#E1F88D",
+        tan:"#CEBDA1",
 
 
       },
