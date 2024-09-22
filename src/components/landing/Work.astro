@@ -1,38 +1,185 @@
-<section class="border-b border-eagle/20  bg-accent-500">
-  <div class="mx-auto max-w-7xl border-x border-eagle/20  px-8 py-12 gradient-grid">
+---
+const slides = [
+{
+    imgSrc: '/public/work/1.png',
+    altText: 'Fleetio Homepage',
+    technologies: ['Express.js', 'Node.js', 'Next.js', 'React.js', 'Tailwind CSS', 'Storybook', 'Contentful'],
+    role: 'Senior Frontend Developer',
+    url: 'https://www.fleetio.com',
+    company: 'Fleetio',
+    title: 'Fleetio',
+
+  },
+  {
+    imgSrc: '/public/work/2.png',
+    altText: 'Fleetio Pricing',
+    technologies: ['Express.js', 'Node.js', 'Next.js', 'React.js', 'Tailwind CSS', 'Storybook', 'Contentful'],
+    role: 'Senior Frontend Developer',
+    url: 'https://www.fleetio.com/pricing',
+    company: 'Fleetio',
+    title: 'Fleetio Pricing',
+  },
+  {
+    imgSrc: '/public/work/3.png',
+    altText: 'Fleetio Blog',
+    technologies: ['Express.js', 'Node.js', 'Next.js', 'React.js', 'Tailwind CSS', 'Storybook', 'Contentful'],
+    role: 'Senior Frontend Developer',
+    url: 'https://www.fleetio.com/blog',
+    company: 'Fleetio',
+    title: 'Fleetio Blog',
+  },
+  {
+    imgSrc: '/public/work/4.png',
+    altText: 'SKF Project',
+    technologies: ['JavaScript', 'JQuery', 'HTML', 'SASS', 'Bootstrap'],
+    role: 'Frontend Developer',
+    url: 'https://www.skf.com/us',
+    company: 'SKF',
+    title: 'SKF',
+  },
+  {
+    imgSrc: '/public/work/5.png',
+    altText: 'Ecore Project',
+    technologies: ['JavaScript', 'JQuery', 'HTML', 'SASS', 'Bootstrap'],
+    role: 'Frontend Developer',
+    url: 'https://www.ecoreintl.com/',
+    company: 'Ecore',
+    title: 'Ecore',
+  },
+  {
+    imgSrc: '/public/work/6.png',
+    altText: 'Godfrey Project',
+    technologies: ['JavaScript', 'JQuery', 'HTML', 'SASS', 'Bootstrap'],
+    role: 'Frontend Developer',
+    url: 'https://www.godfrey.com/',
+    company: 'Godfrey',
+    title: 'Godfrey',
+  },
+  {
+    imgSrc: '/public/work/11.png',
+    altText: 'Axis Lighting Products',
+    technologies: ['JavaScript', 'JQuery', 'HTML', 'SASS', 'Bootstrap'],
+    role: 'Frontend Developer',
+    url: 'https://www.axislighting.com/product-landing/all-products',
+    company: 'Axis Lighting',
+    title: 'Axis Lighting Products',
+  },
+  {
+    imgSrc: '/public/work/12.png',
+    altText: 'Axis Lighting Inspiration',
+    technologies: ['JavaScript', 'JQuery', 'HTML', 'SASS', 'Bootstrap'],
+    role: 'Frontend Developer',
+    url: 'https://www.axislighting.com/inspiration-gallery',
+    company: 'Axis Lighting',
+    title: 'Axis Lighting Inspiration',
+  },
+  {
+    imgSrc: '/public/work/7.png',
+    altText: 'JLG Project',
+    technologies: ['JavaScript', 'JQuery', 'HTML', 'SASS', 'Bootstrap'],
+    role: 'Frontend Developer',
+    url: 'https://www.jlg.com/en',
+    company: 'JLG',
+    title: 'JLG',
+  },
+  {
+    imgSrc: '/public/work/8.png',
+    altText: 'Solenis Project',
+    role: 'Frontend Developer',
+    url: 'https://www.solenis.com/en/',
+    technologies: ['JavaScript', 'JQuery', 'HTML', 'SASS', 'Bootstrap'],
+    company: 'Solenis',
+    title: 'Solenis',
+  },
+  {
+    imgSrc: '/public/work/9.png',
+    altText: 'Keystone Design System',
+    technologies: ['Node.js', 'JavaScript', 'JQuery', 'HTML', 'LESS', 'Foundation'],
+    role: 'Frontend Developer',
+    url: 'https://wcmauthorguide.pa.gov/en/keystone-design-system.html',
+    company: 'Tyler Technologies',
+    title: 'Keystone Design System',
+  },
+  {
+    imgSrc: '/public/work/10.png',
+    altText: 'PA529',
+    technologies: ['Node.js', 'JavaScript', 'JQuery', 'HTML', 'LESS', 'Foundation'],
+    role: 'Frontend Developer',
+    url: 'https://www.pa529.com/',
+    company: 'Pennsylvania Treasury',
+    title: 'PA529',
+  },
+];
+---
+
+<section class="border-b border-eagle/20 bg-accent-500">
+  <div class="mx-auto max-w-7xl border-x border-eagle/20 px-8 py-12 gradient-grid">
     <div class="mx-auto">
       <h3 class="text-3xl font-display text-white uppercase">
-        Developing Modern User Experiences
+        Proven track record developing high-performance web apps and strategic initiatives
       </h3>
     </div>
   </div>
 </section>
-<section class="border-b border-eagle/20  bg-accent-500">
+<section class="border-b border-eagle/20 bg-accent-500">
   <div
-    class="mx-auto max-w-7xl border-eagle/20  border-x"
+    class="mx-auto max-w-7xl border-eagle/20 border-x"
     x-data="{ init() {
             new Splide(this.$refs.splide, {
-
+                type: 'loop',
+                drag: true,
                 perPage: 3,
                 gap: '0rem',
                 breakpoints: {
-                    640: {
+                    620: {
                         perPage: 1,
                     },
+                    992: {
+                        perPage: 2,
+                    },
                 },
-
             }).mount()
         },
     }">
     <section
-      class="splide is-initialized splide--slide splide--ltr splide--draggable is-active"
-      aria-label="Splide/Alpine.js"
+      class="splide"
+      aria-label="Project carousel"
       x-ref="splide"
       id="splide01"
       aria-roledescription="carousel">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {slides.map((slide) => (
+            <li class="splide__slide relative group">
+              <img src={slide.imgSrc} alt={slide.altText} class="w-full h-auto" />
+              <div class="absolute inset-0 bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-start justify-start text-white p-4">
+                <span class="py-2 px-5 text-white">
+                  <h3 class="font-display text-lg pb-2 uppercase">{slide.title}</h3>
+                  <div class="z-10 sm:col-span-6">
+                    <h3 class="font-medium leading-snug text-slate-200">
+                      <div>
+                        <a class="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-[#C2F019] focus-visible:text-lime" href={slide.url} target="_blank" rel="noreferrer noopener" aria-label="Senior Frontend Engineer, Accessibility at Klaviyo (opens in a new tab)">
+                        <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
+                        <span>{slide.role} ·<!-- --> <span class="inline-block">{slide.company}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg></span></span></a></div></h3><p class="mt-2 text-sm leading-normal">Build and maintain critical components used to construct Klaviyo’s frontend, across the whole product. Work closely with cross-functional teams, including developers, designers, and product managers, to implement and advocate for best practices in web accessibility.</p>
+                        <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
+                          {slide.technologies.map((tech) => (
+                            <li class="mr-1.5 mt-2">
+                              <div class="flex items-center rounded-full bg-lime/10 px-3 py-1 text-xs font-medium leading-5 text-[#C2F019]">
+                                {tech}
+                              </div>
+                            </li>
+                          ))}
+                          </ul></div>
+                </span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
       <div class="splide__arrows splide__arrows--ltr items-center">
         <button
-          class="splide__arrow splide__arrow--prev"
+          class="splide__arrow splide__arrow--prev left-0 bg-transparent"
           type="button"
           aria-label="Previous slide"
           aria-controls="splide01-track"
@@ -48,7 +195,7 @@
           ></button
         >
         <button
-          class="splide__arrow splide__arrow--next"
+          class="splide__arrow splide__arrow--next right-0 bg-transparent"
           type="button"
           disabled=""
           aria-label="Next slide"
@@ -64,162 +211,6 @@
             ></path></svg
           ></button
         >
-      </div>
-      <div
-        class="h-full splide__track splide__track--slide splide__track--ltr splide__track--draggable"
-        id="splide01-track"
-        style="padding-left: 0px; padding-right: 0px;"
-        aria-live="polite"
-        aria-atomic="true"
-        aria-busy="false">
-        <ul
-          class="splide__list"
-          id="splide01-list"
-          role="presentation"
-          style="transform: translateX(-2040px);">
-          <li
-            class="flex justify-center flex-col splide__slide is-prev"
-            id="splide01-slide03"
-            role="tabpanel"
-            aria-roledescription="slide"
-            aria-label="3 of 4"
-            style="margin-right: 0.5rem; width: calc(((100% + 0.5rem) / 1) - 0.5rem);"
-            aria-hidden="true">
-            <img
-              alt="work"
-              class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="/work/1.png"
-            />
-          </li>
-          <li
-            class="flex justify-center flex-col splide__slide"
-            id="splide01-slide01"
-            role="tabpanel"
-            aria-roledescription="slide"
-            aria-label="1 of 4"
-            style="margin-right: 0.5rem; width: calc(((100% + 0.5rem) / 1) - 0.5rem);"
-            aria-hidden="true">
-            <img
-              alt="work"
-              class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="/work/2.png"
-            />
-          </li>
-          <li
-            class="flex justify-center flex-col splide__slide is-prev"
-            id="splide01-slide03"
-            role="tabpanel"
-            aria-roledescription="slide"
-            aria-label="3 of 4"
-            style="margin-right: 0.5rem; width: calc(((100% + 0.5rem) / 1) - 0.5rem);"
-            aria-hidden="true">
-            <img
-              alt="work"
-              class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="/work/3.png"
-            />
-          </li>
-          <li
-            class="flex justify-center flex-col splide__slide is-prev"
-            id="splide01-slide03"
-            role="tabpanel"
-            aria-roledescription="slide"
-            aria-label="3 of 4"
-            style="margin-right: 0.5rem; width: calc(((100% + 0.5rem) / 1) - 0.5rem);"
-            aria-hidden="true">
-            <img
-              alt="work"
-              class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="/work/4.png"
-            />
-          </li>
-
-          <li
-            class="flex justify-center flex-col splide__slide"
-            id="splide01-slide02"
-            role="tabpanel"
-            aria-roledescription="slide"
-            aria-label="2 of 4"
-            style="margin-right: 0.5rem; width: calc(((100% + 0.5rem) / 1) - 0.5rem);"
-            aria-hidden="true">
-            <img
-              alt="work"
-              class="w-full object-cover object-center bg-white border-t border-black"
-              src="/work/5.png"
-            />
-          </li>
-
-          <li
-            class="flex justify-center flex-col splide__slide"
-            id="splide01-slide02"
-            role="tabpanel"
-            aria-roledescription="slide"
-            aria-label="2 of 4"
-            style="margin-right: 0.5rem; width: calc(((100% + 0.5rem) / 1) - 0.5rem);"
-            aria-hidden="true">
-            <img
-              alt="work"
-              class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="/work/6.png"
-            />
-          </li>
-          <li
-            class="flex justify-center flex-col splide__slide"
-            id="splide01-slide02"
-            role="tabpanel"
-            aria-roledescription="slide"
-            aria-label="2 of 4"
-            style="margin-right: 0.5rem; width: calc(((100% + 0.5rem) / 1) - 0.5rem);"
-            aria-hidden="true">
-            <img
-              alt="work"
-              class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="/work/7.png"
-            />
-          </li>
-          <li
-            class="flex justify-center flex-col splide__slide"
-            id="splide01-slide02"
-            role="tabpanel"
-            aria-roledescription="slide"
-            aria-label="2 of 4"
-            style="margin-right: 0.5rem; width: calc(((100% + 0.5rem) / 1) - 0.5rem);"
-            aria-hidden="true">
-            <img
-              alt="work"
-              class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="/work/8.png"
-            />
-          </li>
-          <li
-            class="flex justify-center flex-col splide__slide"
-            id="splide01-slide02"
-            role="tabpanel"
-            aria-roledescription="slide"
-            aria-label="2 of 4"
-            style="margin-right: 0.5rem; width: calc(((100% + 0.5rem) / 1) - 0.5rem);"
-            aria-hidden="true">
-            <img
-              alt="work"
-              class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="/work/9.png"
-            />
-          </li>
-          <li
-            class="flex justify-center flex-col splide__slide"
-            id="splide01-slide02"
-            role="tabpanel"
-            aria-roledescription="slide"
-            aria-label="2 of 4"
-            style="margin-right: 0.5rem; width: calc(((100% + 0.5rem) / 1) - 0.5rem);"
-            aria-hidden="true">
-            <img
-              alt="work"
-              class="w-full object-cover object-center bg-white border-t border-black"
-              src="/work/10.png"
-            />
-          </li>
-        </ul>
       </div>
     </section>
   </div>
