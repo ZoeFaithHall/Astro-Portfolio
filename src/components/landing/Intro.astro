@@ -1,9 +1,64 @@
-<section class="border-eagle/20  border-b ">
-  <div class="mx-auto border-eagle/20  border-x max-w-7xl gradient-grid">
-    <div class="mx-auto max-w-7xl p-8">
-      <p class="text-white lg:text-xl">
-        With <span class="font-bold">extensive experience</span> in migrating and redesigning platforms for large-scale growth (like Fleetio’s migration from Ruby on Rails to React and Next.js), a results-driven approach is applied to empower businesses to scale and optimize their online presence. A deep understanding of UI/UX principles, combined with technical fluency in agile development, ensures that all projects are executed to the <span class="font-bold">highest standards of quality</span>.
-      </p>
+---
+const technologies = [
+  "React.js",
+  "Vue.js",
+  "Astro.js",
+  "Next.js",
+  "Node.js",
+  "Express.js",
+  "TypeScript",
+  "JavaScript",
+  "MongoDB",
+  "PostgreSQL",
+  "RESTful APIs",
+  "Git",
+  "Docker",
+  "Tailwind",
+  "SASS",
+  "LESS",
+  "A/B Testing",
+  "SEO",
+  "UI/UX",
+  "WCAG",
+  "Figma",
+  "Adobe",
+  "Agile",
+  "Scrum",
+];
+---
+
+---
+
+<section class="border-eagle/20 border-b">
+  <div class="mx-auto border-eagle/20 border-x max-w-7xl gradient-grid">
+    <div
+      class="flex flex-col md:flex-row mx-auto max-w-7xl p-8 justify-between items-center"
+    >
+      <div class="md:w-4/6 md:pr-24">
+        <h3 class="font-display text-white text-5xl pb-4 uppercase mb-12">
+          Elevate <span class="text-lime italic">Your Brand</span>
+        </h3>
+        <p class="text-white lg:text-xl">
+          With <span class="font-bold">extensive experience</span> in migrating and
+          redesigning platforms for large-scale growth, a results-driven approach
+          is applied to empower businesses to scale and optimize their online presence.
+          A deep understanding of UI/UX principles, combined with technical fluency
+          in agile development, ensures that all projects are executed to the <span
+            class="font-bold">highest standards of quality</span
+          >.
+        </p>
+      </div>
+      <div class="md:w-2/6">
+        <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {
+            technologies.map((tech) => (
+              <div class="flex items-center justify-center rounded-full bg-lime/10 px-2 py-1 text-xs font-medium leading-5 text-[#C2F019] min-w-max">
+                {tech}
+              </div>
+            ))
+          }
+        </div>
+      </div>
     </div>
   </div>
 </section>
