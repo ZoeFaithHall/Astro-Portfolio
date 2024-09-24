@@ -35,7 +35,9 @@ const technologies = [
       class="flex flex-col md:flex-row mx-auto max-w-7xl p-8 justify-between items-center"
     >
       <div class="md:w-4/6 md:pr-24">
-        <h3 class="font-display text-white text-5xl pb-4 uppercase mb-12">
+        <h3
+          class="font-display text-white text-3xl md:text-5xl pb-4 uppercase mb-12 pt-5 lg:pt-0"
+        >
           Elevate <span class="text-lime italic">Your Brand</span>
         </h3>
         <p class="text-white lg:text-xl">
@@ -49,7 +51,9 @@ const technologies = [
         </p>
       </div>
       <div class="md:w-2/6">
-        <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-12 md:pt-0"
+        >
           {
             technologies.map((tech) => (
               <div class="flex items-center justify-center rounded-full bg-lime/10 px-2 py-1 text-xs font-medium leading-5 text-[#C2F019] min-w-max">
