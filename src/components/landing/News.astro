@@ -1,40 +1,44 @@
 ---
-const newsArticles = [
-  {
-    author: "Donn Robinson",
-    date: "October 22, 2023",
-    title:
-      "If Alien Life is Artificially Intelligent, it May be Stranger than We Can imagine",
-    category: "Space and Universe",
-    readTime: "9 mins read",
-    link: "https://example.com/news-article-1",
-  },
-  {
-    author: "Max Wellerman",
-    date: "October 21, 2023",
-    title: "Climate change has pushed Earth into 'Uncharted territory': report",
-    category: "Our Planet",
-    readTime: "3 mins read",
-    link: "https://example.com/news-article-2",
-  },
-  {
-    author: "Sean Paula",
-    date: "October 19, 2023",
-    title: "Humanity at Risk from AI ‘Race to the Bottom’, Says Tech Expert",
-    category: "Technology",
-    readTime: "8 mins read",
-    link: "https://example.com/news-article-3",
-  },
-  {
-    author: "Laura Fransisco",
-    date: "October 19, 2023",
-    title:
-      "UN Science Body Head Fears Lower Chance of Keeping Global warming to 1.5C",
-    category: "Our Planet",
-    readTime: "10 mins read",
-    link: "https://example.com/news-article-4",
-  },
-];
+import fetchRSS from "../../utilities/fetchRSS.js";
+
+const newsArticles = await fetchRSS();
+
+// const newsArticles = [
+//   {
+//     author: "Donn Robinson",
+//     date: "October 22, 2023",
+//     title:
+//       "If Alien Life is Artificially Intelligent, it May be Stranger than We Can imagine",
+//     category: "Space and Universe",
+//     readTime: "9 mins read",
+//     link: "https://example.com/news-article-1",
+//   },
+//   {
+//     author: "Max Wellerman",
+//     date: "October 21, 2023",
+//     title: "Climate change has pushed Earth into 'Uncharted territory': report",
+//     category: "Our Planet",
+//     readTime: "3 mins read",
+//     link: "https://example.com/news-article-2",
+//   },
+//   {
+//     author: "Sean Paula",
+//     date: "October 19, 2023",
+//     title: "Humanity at Risk from AI ‘Race to the Bottom’, Says Tech Expert",
+//     category: "Technology",
+//     readTime: "8 mins read",
+//     link: "https://example.com/news-article-3",
+//   },
+//   {
+//     author: "Laura Fransisco",
+//     date: "October 19, 2023",
+//     title:
+//       "UN Science Body Head Fears Lower Chance of Keeping Global warming to 1.5C",
+//     category: "Our Planet",
+//     readTime: "10 mins read",
+//     link: "https://example.com/news-article-4",
+//   },
+// ];
 ---
 
 <section id="news" class="border-eagle/20 border-b">
@@ -64,18 +68,17 @@ const newsArticles = [
             newsArticles.map((article) => (
               <div class="p-4 flex flex-col justify-between gap-4">
                 <div class="flex flex-col gap-2">
-                  <div class="flex items-center gap-2">
-                    <div class="text-white/80 text-sm">{article.author}</div>
-                    <div class="w-1 h-0 rotate-90 border border-white/60" />
-                    <div class="text-white/80 text-sm">{article.date}</div>
-                  </div>
+                  <div class="flex items-center gap-2" />
                   <div class="text-white text-lg">{article.title}</div>
                   <div class="flex items-center gap-2">
-                    <div class="flex items-center justify-center rounded-full bg-lime/10 px-2 py-1 text-xs font-medium leading-5 text-[#C2F019] min-w-max">
-                      {article.category}
-                    </div>
+                    <a
+                      href={article.link}
+                      class="flex items-center justify-center rounded-full bg-lime/10 px-2 py-1 text-xs font-medium leading-5 text-[#C2F019] min-w-max"
+                    >
+                      {article.author}
+                    </a>
                     <div class="w-1 h-0 rotate-90 border border-white/60" />
-                    <div class="text-white/80 text-sm">{article.readTime}</div>
+                    <div class="text-white/80 text-sm">{article.date}</div>
                   </div>
                 </div>
               </div>
