@@ -10,19 +10,10 @@ const feedUrls = [
 
 async function fetchRSS() {
   const feeds = await Promise.all(feedUrls.map((url) => parser.parseURL(url)));
-  const seenAuthors = new Set();
   const articles = feeds
     .flatMap((feed) => feed.items.slice(0, 2))
-    .filter((item) => {
-      const author = (item.creator || "Unknown Author").split(" - ")[0];
-      if (seenAuthors.has(author)) {
-        return false;
-      }
-      seenAuthors.add(author);
-      return true;
-    })
     .map((item) => ({
-      author: (item.creator || "Unknown Author").split(" - ")[0],
+      author: item.creator || "Unknown Author",
       date: new Date(item.pubDate).toLocaleDateString(),
       title: item.title,
       category: item.categories ? item.categories[0] : "Uncategorized",
