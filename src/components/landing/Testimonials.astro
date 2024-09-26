@@ -1,59 +1,44 @@
+---
+const testimonials = [
+  {
+    text: "Zoe's technical skills and attention to detail have had a significant impact on our website's performance and user experience. Her work on optimizing our content and integrating with Contentful has empowered our content creators to efficiently manage and publish high-quality content, ultimately benefiting our users.",
+    author: "Ross Gebhart",
+    position: "Senior Manager, Brand Marketing",
+    textColor: "#C2F019",
+  },
+  {
+    text: "I can say without uncertainty that her effort to go beyond was unrivalled. Instead of us debugging issues during our weekly meetings, she asked thought-provoking questions around why something was done the way it was, and discussed how code could be improved. Zoe’s passion for quality code, curiosity, and understanding has only scratched the surface and will help her excel as a software engineer.",
+    author: "Cory Trimm",
+    position: "Digital Services Expert",
+    textColor: "#D1F452",
+  },
+  {
+    text: "Working with Zoe has been an exceptional experience. She guides our team with clarity, breaking down complex concepts into simple, actionable terms. Her expertise in accessibility ensures our websites are functional and inclusive, while her deep knowledge of React allows her to solve complex problems and implement advanced features with ease. Zoe’s leadership and technical prowess make her a standout developer.",
+    author: "Megan Aiken",
+    position: "Senior Conversion Rate Optimization Specialist",
+    textColor: "#E1F88D",
+  },
+  {
+    text: "I truly valued working with Zoe. Her approach to problem-solving elevated the quality of our projects, handling complex challenges with creativity and precision. Zoe was reliable, efficient, and an excellent collaborator. Her communication and teamwork made the process smooth and productive, and her contributions were key to our success.",
+    author: "Lindsey Drennan",
+    position: "Senior Brand Designer",
+    textColor: "#F1FBC1",
+  },
+];
+---
+
 <div
-  class="text-white text-xs gap-3 gap-y-12 grid grid-cols-1 md:grid-cols-4 mx-auto p-8 sm:grid-cols-2"
+  class="text-white text-xs gap-3 gap-y-12 grid grid-cols-1 md:grid-cols-4 mx-auto py-8 px-4 sm:grid-cols-2"
 >
-  <div class="flex flex-col justify-between h-full">
-    <p class="text-[#C2F019]">
-      Zoe's technical skills and attention to detail have had a significant
-      impact on our website's performance and user experience. Her work on
-      optimizing our content and integrating with Contentful has empowered our
-      content creators to efficiently manage and publish high-quality content,
-      ultimately benefiting our users.
-    </p>
-    <div class="mt-3">
-      <span class="block font-semibold mt-3">Ross Gebhart</span>
-      <span class="block text-eagle">Senior Manager, Brand Marketing</span>
-    </div>
-  </div>
-  <div class="flex flex-col justify-between h-full">
-    <p class="text-[#D1F452]">
-      I can say without uncertainty that her effort to go beyond was unrivalled.
-      Instead of us debugging issues during our weekly meetings, she asked
-      thought-provoking questions around why something was done the way it was,
-      and discussed how code could be improved. Zoe’s passion for quality code,
-      curiosity, and understanding has only scratched the surface and will help
-      her excel as a software engineer.
-    </p>
-    <div class="mt-3">
-      <span class="block font-semibold mt-3">Cory Trimm</span>
-      <span class="block text-eagle"> Digital Services Expert</span>
-    </div>
-  </div>
-  <div class="flex flex-col justify-between h-full">
-    <p class="text-[#E1F88D]">
-      Working with Zoe has been an exceptional experience. She guides our team
-      with clarity, breaking down complex concepts into simple, actionable
-      terms. Her expertise in accessibility ensures our websites are functional
-      and inclusive, while her deep knowledge of React allows her to solve
-      complex problems and implement advanced features with ease. Zoe’s
-      leadership and technical prowess make her a standout developer.
-    </p>
-    <div class="mt-3">
-      <span class="block font-semibold mt-3">Megan Aiken</span>
-      <span class="block text-eagle"
-        >Senior Conversion Rate Optimization Specialist</span
-      >
-    </div>
-  </div>
-  <div class="flex flex-col justify-between h-full">
-    <p class="text-[#F1FBC1]">
-      I truly valued working with Zoe. Her approach to problem-solving
-      consistently elevated the quality of our projects. She was not only
-      reliable and efficient but also a great collaborator, making teamwork
-      smooth and productive.
-    </p>
-    <div class="mt-3">
-      <span class="block font-semibold mt-3">Lindsey Drennan</span>
-      <span class="block text-eagle">Senior Brand Designer</span>
-    </div>
-  </div>
+  {
+    testimonials.map((testimonial) => (
+      <div class="flex flex-col justify-between h-full px-2">
+        <p class={`text-[${testimonial.textColor}]`}>{testimonial.text}</p>
+        <div class="mt-3">
+          <span class="block font-semibold mt-3">{testimonial.author}</span>
+          <span class="block text-eagle">{testimonial.position}</span>
+        </div>
+      </div>
+    ))
+  }
 </div>
