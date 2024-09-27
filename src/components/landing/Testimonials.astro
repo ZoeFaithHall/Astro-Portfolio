@@ -33,7 +33,7 @@ const testimonials = [
   {
     testimonials.map((testimonial) => (
       <div class="flex flex-col justify-between h-full px-2">
-        <p class={`text-[${testimonial.textColor}]`}>{testimonial.text}</p>
+        <p style={`color: ${testimonial.textColor};`}>{testimonial.text}</p>
         <div class="mt-3">
           <span class="block font-semibold mt-3">{testimonial.author}</span>
           <span class="block text-eagle">{testimonial.position}</span>
