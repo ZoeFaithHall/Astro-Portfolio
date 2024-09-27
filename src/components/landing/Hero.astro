@@ -3,15 +3,43 @@ import Banner from "@/components/landing/Banner.astro";
 import Testimonials from "@/components/landing/Testimonials.astro";
 ---
 
-<section class="border-eagle/20  border-b">
-  <div class="mx-auto border-eagle/20  border-x max-w-7xl">
-    <div class="mx-auto">
-      <div class="mx-auto lg:pt-28 gradient-grid px-8 py-12">
-        <h1 class="text-white font-display uppercase text-3xl lg:text-7xl">
-          AMPLIFY YOUR DIGITAL footprint with a partner in Web development<span class="text-lime text-md font-extralight">✺</span>
-      </div>
-      <Banner />
-      <Testimonials />
+<section class="border-eagle/20 border-b">
+  <div class="mx-auto border-eagle/20 border-x max-w-5xl lg:max-w-7xl">
+    <div
+      class="relative mx-auto py-12 md:py-20 lg:py-28 px-8 gradient-grid md:min-h-[20rem] lg:min-h-12"
+    >
+      <!-- Background Image -->
+      <img
+        src="/images/Background.png"
+        alt="Background Image"
+        class="absolute hidden md:inline right-0 top-0 h-full w-2/3 md:w-1/2 lg:w-1/2 object-cover z-10 opacity-80"
+      />
+
+      <!-- Main Text -->
+      <h1
+        class="text-white font-display uppercase text-3xl md:text-5xl lg:text-7xl z-20 relative"
+      >
+        AMPLIFY YOUR DIGITAL <br class="inline md:hidden" />footprint with <br
+          class="hidden md:inline"
+        />
+        a partner in
+      </h1>
+
+      <!-- Headshot Image -->
+      <img
+        src="/images/Headshot.png"
+        alt="Zoe Hall Headshot"
+        class="absolute hidden md:inline right-0 top-1/2 transform -translate-y-1/2 h-2/3 md:h-full w-auto z-30"
+      />
+
+      <!-- "Web Development ✺" Text -->
+      <h1
+        class="text-white font-display uppercase text-3xl md:text-5xl lg:text-7xl z-40 relative"
+      >
+        Web Development <span class="text-lime text-md font-extralight">✺</span>
+      </h1>
     </div>
+    <Banner />
+    <Testimonials />
   </div>
 </section>
