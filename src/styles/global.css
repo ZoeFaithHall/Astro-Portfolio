@@ -81,5 +81,5 @@ html {
 }
 
 .animate-marquee {
-  animation: marquee 100s linear infinite;
+  animation: marquee 100s linear infinite; /* Slower speed, adjust 20s to a higher value for slower animation */
 }

@@ -9,9 +9,11 @@ const feedUrls = [
 ];
 
 async function fetchRSS() {
-  const feeds = await Promise.all(feedUrls.map((url) => parser.parseURL(url)));
+  const feeds = await Promise.all(
+    feedUrls.map((url) => fetchWithRetry(url, 3)),
+  );
   const articles = feeds
-    .flatMap((feed) => feed.items.slice(0, 2))
+    .flatMap((feed) => (feed ? feed.items.slice(0, 2) : []))
     .map((item) => ({
       author: item.creator || "Unknown Author",
       date: new Date(item.pubDate).toLocaleDateString(),
@@ -21,6 +23,24 @@ async function fetchRSS() {
     }));
 
   return shuffleArray(articles);
+}
+
+async function fetchWithRetry(url, retries) {
+  for (let i = 0; i < retries; i++) {
+    try {
+      const feed = await parser.parseURL(url);
+      return feed;
+    } catch (error) {
+      console.error(`Error fetching RSS feed from ${url}:`, error);
+      if (i === retries - 1) {
+        console.error(
+          `Failed to fetch RSS feed from ${url} after ${retries} attempts.`,
+        );
+        return null;
+      }
+      await new Promise((resolve) => setTimeout(resolve, 1000)); // Wait 1 second before retrying
+    }
+  }
 }
 
 function shuffleArray(array) {
