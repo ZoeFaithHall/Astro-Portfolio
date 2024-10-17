@@ -2,22 +2,39 @@
 import "../styles/global.css";
 ---
 
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width" />
+<!-- Meta title for SEO -->
+<title>Zoë Hall - Senior Frontend Developer | Web Development Portfolio</title>
+
+<!-- Meta tags -->
 <meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="author" content="Zoë Hall" />
-<meta name="your keywords" content="Senior Frontend Developer" />
+<meta
+  name="keywords"
+  content="Senior Frontend Developer, JavaScript, React, Tailwind CSS, SEO, Accessibility, Web Development, Software Engineering, UI/UX Design, Web Portfolio"
+/>
+<meta
+  name="description"
+  content="Zoë Hall - Senior Frontend Developer specializing in modern web technologies like JavaScript, React, and accessibility best practices."
+/>
+
+<!-- Color and tile configuration -->
 <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#ffffff" />
 <meta name="msapplication-TileColor" content="#ffffff" />
 <meta name="theme-color" content="#ffffff" />
 
-<!-- HTML in your document's head -->
-<link rel="preconnect" href="https://rsms.me/" />
+<!-- Preconnect for external resources -->
+<link rel="preconnect" href="https://rsms.me" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+
+<!-- Load external font (Inter) -->
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
-<script src="https://unpkg.com/mailgo@0.12.2/dist/mailgo.min.js"></script>
+<!-- Mailgo script for improved email/tel functionality -->
+<script defer src="https://unpkg.com/mailgo@0.12.2/dist/mailgo.min.js"></script>
+
+<!-- Splide (Carousel/Slider) CSS and JS for interactive elements -->
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css"
@@ -26,5 +43,54 @@ import "../styles/global.css";
   defer
   src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"
 ></script>
+
+<!-- Alpine.js for reactive UI functionality -->
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
 ></script>
+
+<!-- Open Graph Meta Tags for Social Sharing -->
+<meta property="og:title" content="Zoë Hall - Senior Frontend Developer" />
+<meta
+  property="og:description"
+  content="Zoë Hall's web development portfolio showcasing her skills in modern web technologies like JavaScript, React, and Tailwind CSS."
+/>
+<meta property="og:image" content="/images/zoehalldev.png" />
+<meta property="og:url" content="https://zoehall.dev" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter Card Meta Tags for Social Sharing -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Zoë Hall - Senior Frontend Developer" />
+<meta
+  name="twitter:description"
+  content="Explore Zoë Hall's portfolio as a Senior Frontend Developer specializing in JavaScript and modern web technologies."
+/>
+<meta name="twitter:image" content="/images/zoehalldev.png" />
+
+<!-- Structured Data for SEO -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Zoë Hall",
+    "jobTitle": "Senior Frontend Developer",
+    "url": "https://zoehall.dev",
+    "image": "https://zoehall.dev/images/zoehalldev.png",
+    "sameAs": [
+      "https://linkedin.com/in/zoefhall",
+      "https://github.com/zoefaithhall"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Zoë Hall Dev"
+    },
+    "knowsAbout": [
+      "JavaScript",
+      "React",
+      "Tailwind CSS",
+      "HTML",
+      "CSS",
+      "Web Development"
+    ]
+  }
+</script>
