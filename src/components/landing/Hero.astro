@@ -16,28 +16,23 @@ import Testimonials from "@/components/landing/Testimonials.astro";
       />
 
       <!-- Main Text -->
-      <h1
-        class="text-white font-display uppercase text-3xl md:text-5xl lg:text-7xl z-20 relative"
+      <div
+        class="text-white font-display uppercase max-w-lg md:max-w-3xl pl-10"
       >
-        AMPLIFY YOUR DIGITAL <br class="inline md:hidden" />footprint with <br
-          class="hidden md:inline"
+        <span
+          class="text-lime text-3xl md:text-5xl lg:text-7xl font-extralight absolute top-0 left-4 z-20"
+          >✺</span
+        >
+        <h1 class="md:mb-6 text-3xl md:text-5xl lg:text-7xl z-20 relative">
+          Crafting<br />Architectural<br /> Experiences
+        </h1>
+        <!-- Headshot Image -->
+        <img
+          src="/images/Headshot.png"
+          alt="Zoe Hall Senior Frontend Developer Image"
+          class="absolute hidden md:inline right-0 top-1/2 transform -translate-y-1/2 h-2/3 md:h-full w-auto z-30"
         />
-        a partner in
-      </h1>
-
-      <!-- Headshot Image -->
-      <img
-        src="/images/Headshot.png"
-        alt="Zoe Hall Senior Frontend Developer Image"
-        class="absolute hidden md:inline right-0 top-1/2 transform -translate-y-1/2 h-2/3 md:h-full w-auto z-30"
-      />
-
-      <!-- "Web Development ✺" Text -->
-      <h1
-        class="text-white font-display uppercase text-3xl md:text-5xl lg:text-7xl z-40 relative"
-      >
-        Web Development <span class="text-lime text-md font-extralight">✺</span>
-      </h1>
+      </div>
     </div>
     <Banner />
     <Testimonials />
