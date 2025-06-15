@@ -83,3 +83,16 @@ html {
 .animate-marquee {
   animation: marquee 100s linear infinite; /* Slower speed, adjust 20s to a higher value for slower animation */
 }
+
+@keyframes marquee-rtl {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-rtl {
+  animation: marquee-rtl 100s linear infinite;
+}
