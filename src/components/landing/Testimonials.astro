@@ -27,22 +27,24 @@ const testimonials = [
 ];
 ---
 
-<div
-  class="text-white text-xs gap-3 gap-y-12 grid grid-cols-1 md:grid-cols-4 mx-auto py-8 px-4 sm:grid-cols-2"
->
-  {
-    testimonials.map((testimonial, idx) => (
-      <div
-        data-aos-delay={idx * 300}
-        data-aos="fade"
-        class="flex flex-col justify-between h-full px-4"
-      >
-        <p style={`color: ${testimonial.textColor};`}>{testimonial.text}</p>
-        <div class="mt-3">
-          <span class="block font-semibold mt-3">{testimonial.author}</span>
-          <span class="block text-eagle">{testimonial.position}</span>
+<section class="border-eagle/20 border-x">
+  <div
+    class="text-white text-xs gap-3 gap-y-12 grid grid-cols-1 md:grid-cols-4 mx-auto py-8 px-4 sm:grid-cols-2"
+  >
+    {
+      testimonials.map((testimonial, idx) => (
+        <div
+          data-aos-delay={idx * 300}
+          data-aos="fade"
+          class="flex flex-col justify-between h-full px-4"
+        >
+          <p style={`color: ${testimonial.textColor};`}>{testimonial.text}</p>
+          <div class="mt-3">
+            <span class="block font-semibold mt-3">{testimonial.author}</span>
+            <span class="block text-eagle">{testimonial.position}</span>
+          </div>
         </div>
-      </div>
-    ))
-  }
-</div>
+      ))
+    }
+  </div>
+</section>

@@ -28,9 +28,11 @@
   --color-6: #6b705c;
 }
 
+/* REMOVED - Conflicts with Lenis
 html {
   scroll-behavior: smooth;
 }
+*/
 
 @supports (font-variation-settings: normal) {
   /* Use variable font if supported */
@@ -81,7 +83,7 @@ html {
 }
 
 .animate-marquee {
-  animation: marquee 100s linear infinite; /* Slower speed, adjust 20s to a higher value for slower animation */
+  animation: marquee 100s linear infinite;
 }
 
 @keyframes marquee-rtl {
@@ -107,4 +109,25 @@ html {
 }
 .spin-slow {
   animation: spin-slow 100s linear infinite;
+}
+
+/* Lenis Smooth Scroll Styles */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
