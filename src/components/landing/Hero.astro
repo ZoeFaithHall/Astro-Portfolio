@@ -12,31 +12,43 @@ import Testimonials from "@/components/landing/Testimonials.astro";
       <img
         src="/images/Background.png"
         alt="Grid background Image"
-        class="absolute hidden md:inline right-0 top-0 h-full w-2/3 md:w-1/2 lg:w-1/2 object-cover z-10 opacity-80"
+        class="absolute hidden md:inline right-0 top-0 h-full w-2/3 md:w-1/2 lg:w-1/2 object-cover z-0 opacity-80"
       />
 
       <!-- Main Text -->
       <div
-        class="text-white font-display uppercase max-w-lg md:max-w-3xl pl-10"
+        class="text-white font-display uppercase max-w-2xl md:max-w-4xl lg:max-w-5xl pl-10"
       >
         <span
           class="text-lime text-3xl md:text-5xl lg:text-7xl font-extralight absolute top-0 left-4 z-20 spin-slow"
           >✺</span
         >
-        <h1 class="md:mb-6 text-3xl md:text-5xl lg:text-7xl z-20 relative">
-          I build frontend products that serve millions—using AI to move faster
-          than most teams think is possible
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-[-0.02em] leading-[0.95] relative"
+        >
+          <span class="relative z-10">I build frontend<br /></span>
+          products that<br />
+          <span class="relative z-20">serve millions </span>
         </h1>
-        <!-- Headshot Image -->
-        <img
-          src="/images/Headshot.png"
-          alt="Zoe Hall Frontend Architect Headshot"
-          class="absolute hidden md:inline right-0 top-1/2 transform -translate-y-1/2 w-auto z-30"
-          style="height:133%;"
-        />
+        <div
+          class="text-sm md:text-sm lg:text-base font-medium tracking-wide text-neutral-400 relative z-20 mt-6 md:mt-8 lg:mt-10"
+        >
+          <a
+            href="#approach"
+            class="uppercase w-full bg-lime duration-200 font-display hover:bg-black text-black lg:w-auto my-2 mr-2 px-6 py-4 sm:rounded-full text-black hover:text-eagle text-center text-xs uppercase"
+            >Let's Talk</a
+          >
+        </div>
       </div>
+      <!-- Headshot Image -->
+      <img
+        src="/images/Headshot.png"
+        alt="Zoe Hall Headshot"
+        class="absolute hidden md:inline right-0 top-1/2 transform -translate-y-1/2 w-auto z-10"
+        style="height:133%;"
+      />
     </div>
-    <Banner />
-    <Testimonials />
   </div>
+  <Banner />
+  <Testimonials />
 </section>

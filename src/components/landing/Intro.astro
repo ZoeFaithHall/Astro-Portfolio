@@ -1,32 +1,23 @@
 ---
 const technologies = [
-  "React.js",
-  "Next.js",
-  "Node.js",
-  "TypeScript",
-  "JavaScript",
-  "AI/ML",
-  "OpenAI",
-  "ElevenLabs",
-  "Stable Diffusion",
-  "Express.js",
-  "GraphQL",
-  "MongoDB",
-  "PostgreSQL",
-  "RESTful APIs",
-  "Storybook",
-  "Git",
-  "Tailwind",
-  "SASS",
-  "LESS",
-  "A/B Testing",
-  "SEO",
-  "UI/UX",
-  "WCAG",
-  "Figma",
-  "Adobe",
-  "Agile",
-  "Scrum",
+  { name: "React", icon: "react" },
+  { name: "Next.js", icon: "nextdotjs" },
+  { name: "TypeScript", icon: "typescript" },
+  { name: "JavaScript", icon: "javascript" },
+  { name: "Node.js", icon: "nodedotjs" },
+  { name: "Claude Code", icon: "anthropic" },
+  { name: "GitHub Copilot", icon: "githubcopilot" },
+  { name: "Python", icon: "python" },
+  { name: "GraphQL", icon: "graphql" },
+  { name: "Tailwind CSS", icon: "tailwindcss" },
+  { name: "Storybook", icon: "storybook" },
+  { name: "Chromatic", icon: "chromatic" },
+  { name: "Git/GitHub", icon: "github" },
+  { name: "Vercel", icon: "vercel" },
+  { name: "Figma", icon: "figma" },
+  { name: "SASS", icon: "sass" },
+  { name: "PostgreSQL", icon: "postgresql" },
+  { name: "MongoDB", icon: "mongodb" },
 ];
 ---
 
@@ -35,33 +26,89 @@ const technologies = [
     <div
       data-aos="fade-up"
       data-aos-duration="1000"
-      class="flex flex-col md:flex-row mx-auto max-w-7xl p-8 justify-between items-center"
+      class="flex flex-col md:flex-row mx-auto max-w-7xl p-8 md:p-12 lg:p-16 justify-between items-start gap-12"
     >
-      <div class="md:w-4/6 md:pr-24 pt-8 lg:pt-0">
+      <!-- Left Column: Content -->
+      <div class="md:w-3/5 lg:w-2/3">
         <h2
-          class="font-display text-white text-3xl md:text-5xl lg:pt-0 pb-8 lg:pb-8 uppercase leading-snug"
+          class="font-display text-white text-3xl md:text-4xl lg:text-5xl pb-6 md:pb-8 uppercase leading-tight"
         >
-          The Art of <span class="text-lime italic leading-snug"
-            >Mindful
-          </span>Development
+          Building Products That <span class="text-lime italic">Scale</span>
         </h2>
-        <p class="text-white lg:text-xl">
-          I create web experiences where technical excellence meets human
-          needs—where clean code, intuitive interfaces, and thoughtful
-          structures converge to welcome everyone. Each project balances
-          innovation with reliability, complexity with clarity, and performance
-          with accessibility. My work is built on the belief that exceptional
-          code should be as carefully crafted as the experiences it creates.
-        </p>
+
+        <div class="space-y-6 text-neutral-300">
+          <p class="text-base md:text-lg leading-relaxed">
+            I build frontend products that serve millions while maintaining
+            quality—not through heroics, but through systems.
+          </p>
+
+          <p class="text-base md:text-lg leading-relaxed">
+            Using AI-enhanced workflows (Claude Code, ChatGPT, Copilot) to ship
+            60% faster without sacrificing accessibility, performance, or
+            developer experience. My approach: make it hard to ship broken code
+            through preventive tooling, not documentation.
+          </p>
+
+          <div>
+            <h3
+              class="text-white font-display uppercase text-sm tracking-wider mb-4"
+            >
+              What that looks like:
+            </h3>
+
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="text-lime mr-3 mt-1 flex-shrink-0">→</span>
+                <span class="text-base leading-relaxed">
+                  SEO validation pipelines that block regressions in CI (68%→92%
+                  health, proven at scale)
+                </span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-lime mr-3 mt-1 flex-shrink-0">→</span>
+                <span class="text-base leading-relaxed">
+                  Accessibility baked into components by default (64→98 scores
+                  serving millions)
+                </span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-lime mr-3 mt-1 flex-shrink-0">→</span>
+                <span class="text-base leading-relaxed">
+                  Design systems that make teams faster while maintaining
+                  consistency
+                </span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-lime mr-3 mt-1 flex-shrink-0">→</span>
+                <span class="text-base leading-relaxed">
+                  Preventive tooling that catches problems before users see them
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <p class="text-base md:text-lg leading-relaxed">
+            I care about products that scale to millions without constant
+            firefighting. Code that works for everyone—including users on screen
+            readers, slow networks, and older devices. Engineering workflows
+            that make velocity sustainable.
+          </p>
+        </div>
       </div>
-      <div class="w-full md:w-2/6">
-        <div
-          class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 pt-12 md:pt-0"
-        >
+
+      <!-- Right Column: Tech Stack with Logos -->
+      <div class="md:w-2/5 lg:w-1/3">
+        <div class="grid grid-cols-2 gap-3 md:gap-4">
           {
             technologies.map((tech) => (
-              <div class="flex items-center justify-center rounded-full bg-lime/10 px-2 py-1 text-xs font-medium leading-5 text-[#C2F019] min-w-max">
-                {tech}
+              <div class="flex items-center gap-2 rounded-full bg-lime/10 px-3 py-2.5 text-xs font-medium leading-5 text-lime">
+                <img
+                  src={`https://cdn.simpleicons.org/${tech.icon}/C2F019`}
+                  alt={`${tech.name} logo`}
+                  class="w-4 h-4 flex-shrink-0"
+                  loading="lazy"
+                />
+                <span class="truncate">{tech.name}</span>
               </div>
             ))
           }
