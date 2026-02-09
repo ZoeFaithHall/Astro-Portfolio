@@ -7,13 +7,13 @@ const testimonials = [
     textColor: "#C2F019",
   },
   {
-    text: "I can say with complete certainty that her effort to go beyond was unrivalled. Instead of us debugging issues during our weekly meetings, she asked thought-provoking questions around why something was done the way it was, and discussed how code could be improved. Zoe’s passion for quality code, curiosity, and understanding has only scratched the surface and will excel her as a software engineer.",
+    text: "I can say with complete certainty that her effort to go beyond was unrivalled. Instead of us debugging issues during our weekly meetings, she asked thought-provoking questions around why something was done the way it was, and discussed how code could be improved. Zoe's passion for quality code, curiosity, and understanding has only scratched the surface and will excel her as a software engineer.",
     author: "Cory Trimm",
     position: "Digital Services Expert",
     textColor: "#D1F452",
   },
   {
-    text: "Working with Zoe has been an exceptional experience. She guides our team with clarity, breaking down complex concepts into simple, actionable terms. Her expertise in accessibility and user experience ensures our websites are functional and inclusive, while her deep knowledge of React allows her to solve complex problems and implement advanced features with ease. Zoe’s leadership and technical prowess make her a standout engineer.",
+    text: "Working with Zoe has been an exceptional experience. She guides our team with clarity, breaking down complex concepts into simple, actionable terms. Her expertise in accessibility and user experience ensures our websites are functional and inclusive, while her deep knowledge of React allows her to solve complex problems and implement advanced features with ease. Zoe's leadership and technical prowess make her a standout engineer.",
     author: "Megan Aiken",
     position: "Senior Conversion Rate Optimization Specialist",
     textColor: "#E1F88D",
@@ -25,20 +25,39 @@ const testimonials = [
     textColor: "#F1FBC1",
   },
 ];
+
+interface Props {
+  section?: "first" | "last";
+}
+
+const { section = "all" } = Astro.props;
+
+const displayTestimonials =
+  section === "first"
+    ? testimonials.slice(0, 2)
+    : section === "last"
+      ? testimonials.slice(2)
+      : testimonials;
+
+const gridCols = section === "all" ? "md:grid-cols-4" : "md:grid-cols-2";
 ---
 
 <section class="border-eagle/20 border-x max-w-7xl mx-auto">
   <div
-    class="text-white text-xs gap-3 gap-y-12 grid grid-cols-1 md:grid-cols-4 mx-auto py-8 px-4 sm:grid-cols-2"
+    class={`text-white text-sm gap-3 gap-y-12 grid grid-cols-1 ${gridCols} mx-auto py-8 px-4 sm:grid-cols-2`}
   >
     {
-      testimonials.map((testimonial, idx) => (
+      displayTestimonials.map((testimonial, idx) => (
         <div
           data-aos-delay={idx * 300}
           data-aos="fade"
           class="flex flex-col justify-between h-full px-4"
         >
-          <p style={`color: ${testimonial.textColor};`}>{testimonial.text}</p>
+          <p style={`color: ${testimonial.textColor};`}>
+            {'"'}
+            {testimonial.text}
+            {'"'}
+          </p>
           <div class="mt-3">
             <span class="block font-semibold mt-3">{testimonial.author}</span>
             <span class="block text-eagle">{testimonial.position}</span>
