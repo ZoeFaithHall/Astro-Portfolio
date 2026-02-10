@@ -1,21 +1,34 @@
 ---
 const testimonials = [
   {
-    text: "Zoe's technical skills and attention to detail have had a significant impact on our website's performance and user experience. Her work on optimizing our content and integrating with Sanity and Storybook has empowered our content creators to efficiently manage and publish high-quality content, ultimately benefiting our users.",
-    author: "Ross Gebhart",
-    position: "Director, Brand Marketing",
-    textColor: "#C2F019",
+    text: "I was fortunate enough to work alongside Zoë during ideation for a non-profit. Zoë is an exceptional developer who combines deep technical expertise with a genuine, user-centric mindset. She collaborates naturally with colleagues across disciplines and contributes to a strong team dynamic. What sets Zoë apart is her ability to think beyond the obvious by regularly proposing thoughtful, creative solutions that balance technical requirements with real user needs.",
+    author: "Ben Brautigam",
+    position: "Founder and Head of Product at Eyrus, TEDx Speaker",
+    textColor: "#A2E22B",
   },
   {
     text: "I can say with complete certainty that her effort to go beyond was unrivalled. Instead of us debugging issues during our weekly meetings, she asked thought-provoking questions around why something was done the way it was, and discussed how code could be improved. Zoe's passion for quality code, curiosity, and understanding has only scratched the surface and will excel her as a software engineer.",
     author: "Cory Trimm",
-    position: "Digital Services Expert",
+    position: "Principal Engineering Manager, Nava",
     textColor: "#D1F452",
   },
   {
-    text: "Working with Zoe has been an exceptional experience. She guides our team with clarity, breaking down complex concepts into simple, actionable terms. Her expertise in accessibility and user experience ensures our websites are functional and inclusive, while her deep knowledge of React allows her to solve complex problems and implement advanced features with ease. Zoe's leadership and technical prowess make her a standout engineer.",
+    text: "As a team member, Zoë consistently asks smart questions, pays attention to detail, and scopes + executes work effectively to meet deadlines. Across multiple launches we worked on together, Zoë brought a calm, intentional approach that made collaboration easy. Zoë is someone who communicates clearly and executes with care.",
+    author: "Daniel Simpson",
+    position: "Manager, Product Marketing, Fleetio",
+    textColor: "#B2E64D",
+  },
+  {
+    text: "Zoe's technical skills and attention to detail have had a significant impact on our website's performance and user experience. Her work on optimizing our content and integrating with Sanity and Storybook has empowered our content creators to efficiently manage and publish high-quality content, ultimately benefiting our users.",
+    author: "Ross Gebhart",
+    position: "Director, Brand Marketing, Fleetio",
+    textColor: "#C2F019",
+  },
+  {
+    text: "She consistently designs scalable, maintainable solutions while keeping both business goals and UX front and center. I’d recommend her to any team looking for a strong architectural leader.",
     author: "Megan Aiken",
-    position: "Senior Conversion Rate Optimization Specialist",
+    position:
+      "Senior Conversion Rate Optimization Specialist, Growth Strategist, Fleetio",
     textColor: "#E1F88D",
   },
   {
@@ -27,7 +40,7 @@ const testimonials = [
 ];
 
 interface Props {
-  section?: "first" | "last";
+  section?: "first" | "middle" | "last";
 }
 
 const { section = "all" } = Astro.props;
@@ -35,10 +48,11 @@ const { section = "all" } = Astro.props;
 const displayTestimonials =
   section === "first"
     ? testimonials.slice(0, 2)
-    : section === "last"
-      ? testimonials.slice(2)
-      : testimonials;
-
+    : section === "middle"
+      ? testimonials.slice(2, 4)
+      : section === "last"
+        ? testimonials.slice(4)
+        : testimonials;
 const gridCols = section === "all" ? "md:grid-cols-4" : "md:grid-cols-2";
 ---
 
