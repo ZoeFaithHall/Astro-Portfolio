@@ -1,0 +1,102 @@
+---
+const artifacts = [
+    {
+        title: "ADHD Daily Routine Builder",
+        description:
+            "Interactive tool that generates a personalized daily routine based on your work setup, energy patterns, and ADHD challenges. Not a productivity system — a survival framework.",
+        tags: ["React", "Claude Code", "Conditional Logic"],
+        href: "/artifacts/adhd-routine",
+        status: "Live",
+    },
+];
+---
+
+<section
+    id="artifacts"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    class="border-eagle/20 border-t scroll-m-0"
+>
+    <div class="mx-auto border-eagle/20 border-x max-w-7xl">
+        <div class="pt-12 pb-8 px-8 lg:py-12">
+            <!-- Section Header -->
+            <div class="flex items-start gap-4 mb-4">
+                <span class="text-lime text-2xl spin-slow">✺</span>
+                <div>
+                    <h2
+                        class="font-display text-white text-3xl md:text-4xl lg:text-5xl uppercase leading-tight"
+                    >
+                        AI <span class="text-lime italic">Artifacts</span>
+                    </h2>
+                </div>
+            </div>
+            <p
+                class="text-neutral-400 text-base md:text-lg max-w-2xl mb-12 ml-10"
+            >
+                Interactive tools built with AI-enhanced workflows — the same
+                approach I bring to production engineering.
+            </p>
+
+            <!-- Artifact Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ml-10">
+                {
+                    artifacts.map((artifact) => (
+                        <a
+                            href={artifact.href}
+                            class="group block border border-eagle/20 rounded-sm p-6 md:p-8 hover:border-lime/30 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden"
+                        >
+                            <div class="absolute inset-0 bg-lime/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                            <div class="relative z-10">
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="font-display text-xs uppercase tracking-wider text-lime/60">
+                                        {artifact.status}
+                                    </span>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                        class="w-4 h-4 text-eagle/40 group-hover:text-lime transition-colors duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transform"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                            clip-rule="evenodd"
+                                        />
+                                    </svg>
+                                </div>
+
+                                <h3 class="text-white text-xl md:text-2xl font-semibold mb-3 group-hover:text-lime transition-colors duration-300">
+                                    {artifact.title}
+                                </h3>
+
+                                <p class="text-eagle text-sm leading-relaxed mb-6">
+                                    {artifact.description}
+                                </p>
+
+                                <div class="flex flex-wrap gap-2">
+                                    {artifact.tags.map((tag) => (
+                                        <span class="text-xs font-medium text-lime/70 bg-lime/[0.06] px-3 py-1 rounded-full border border-lime/10">
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        </a>
+                    ))
+                }
+
+                <!-- Placeholder for future artifacts -->
+                <div
+                    class="border border-dashed border-eagle/10 rounded-sm p-6 md:p-8 flex items-center justify-center min-h-[200px]"
+                >
+                    <p
+                        class="text-eagle/30 text-sm font-display uppercase tracking-wider"
+                    >
+                        More coming soon
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
